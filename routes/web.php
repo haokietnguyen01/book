@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('/home', [App\Http\Controllers\HomeController::class, 'home']);
+route::get('/book/list', [App\Http\Controllers\HomeController::class, 'listBook']);
+route::get('/book/upload', [App\Http\Controllers\HomeController::class, 'bookCreateForm']);
+route::post('/book/upload', [App\Http\Controllers\HomeController::class, 'bookCreate']);
+route::get('/book/update/{id}',[App\Http\Controllers\HomeController::class, 'bookUpdateForm']);
+route::post('/book/update/{id}',[App\Http\Controllers\HomeController::class, 'bookUpdate']);
+route::get('/book/delete/{id}',[App\Http\Controllers\HomeController::class, 'bookDelete']);
